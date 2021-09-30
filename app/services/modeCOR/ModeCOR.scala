@@ -23,6 +23,13 @@ abstract class ModeCOR(nextCOR: ModeCOR= null,field:Field) {
   def action(): ListBuffer[Player]
 }
 
+/**
+ * CODE REVIEW
+ * -----------
+ * 
+ * - you should use val instead of var 
+ * 
+ */
 object ModeCOR {
   def nbVictoriesModesCOR(field:Field): ModeCOR = {
     var COR: ModeCOR = new EqModeCOR(field = field)

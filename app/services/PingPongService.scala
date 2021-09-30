@@ -17,10 +17,25 @@ object PingPongService {
     list
   }
 
+  /**
+   * CODE REVIEW
+   * -----------
+   * 
+   * - a good practice when you return an updated list is to return it. 
+   * - you can also return a tuple like (updatedList, player) to also have the added item in the return data.
+   * 
+   */
   def addPlayer(player: Player): Player ={
     list.addOne(player).head
   }
 
+  /**
+   * CODE REVIEW
+   * -----------
+   * 
+   * - always specify the return type 
+   * 
+   */
   def filterFromVictoryEq(victoriesNb: Int) ={
     list.filter(player => player.nbVictories == victoriesNb)
   }
@@ -42,6 +57,13 @@ object PingPongService {
     }
   }
 
+  /**
+   * CODE REVIEW
+   * -----------
+   * 
+   * - watch you indentation, use a formatter like scalafmt to do it for you
+   * 
+   */
   def removePlayer(id:Int): Boolean = {
       if(list.indices.contains(id)){
         list.remove(id)
